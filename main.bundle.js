@@ -288,7 +288,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\r\n  padding-top: 40px;\r\n  padding-bottom: 40px;\r\n  background-color: #eee;\r\n}\r\n\r\n.form-signin {\r\n  max-width: 330px;\r\n  padding: 15px;\r\n  margin: 0 auto;\r\n}\r\n.form-signin .form-signin-heading,\r\n.form-signin .checkbox {\r\n  margin-bottom: 10px;\r\n}\r\n.form-signin .checkbox {\r\n  font-weight: normal;\r\n}\r\n.form-signin .form-control {\r\n  position: relative;\r\n  height: auto;\r\n  box-sizing: border-box;\r\n  padding: 10px;\r\n  font-size: 16px;\r\n}\r\n.form-signin .form-control:focus {\r\n  z-index: 2;\r\n}\r\n.form-signin input[type=\"email\"] {\r\n  margin-bottom: -1px;\r\n  border-bottom-right-radius: 0;\r\n  border-bottom-left-radius: 0;\r\n}\r\n.form-signin input[type=\"password\"] {\r\n  margin-bottom: 10px;\r\n  border-top-left-radius: 0;\r\n  border-top-right-radius: 0;\r\n}\r\n", ""]);
+exports.push([module.i, "body {\r\n  padding-top: 40px;\r\n  padding-bottom: 40px;\r\n  background-color: #eee;\r\n}\r\n\r\n.form-signin {\r\n  max-width: 330px;\r\n  padding: 15px;\r\n  margin: 0 auto;\r\n}\r\n.form-signin .form-signin-heading,\r\n.form-signin .checkbox {\r\n  margin-bottom: 10px;\r\n}\r\n.form-signin .checkbox {\r\n  font-weight: normal;\r\n}\r\n.form-signin .form-control {\r\n  position: relative;\r\n  height: auto;\r\n  box-sizing: border-box;\r\n  padding: 10px;\r\n  font-size: 16px;\r\n}\r\n.form-signin .form-control:focus {\r\n  z-index: 2;\r\n}\r\n.form-signin input[type=\"email\"] {\r\n  margin-bottom: -1px;\r\n  border-bottom-right-radius: 0;\r\n  border-bottom-left-radius: 0;\r\n}\r\n.form-signin input[type=\"password\"] {\r\n  margin-bottom: 10px;\r\n  border-top-left-radius: 0;\r\n  border-top-right-radius: 0;\r\n}\r\n\r\n\r\n.logoStyle {\r\n     font-family: \"Times New Roman\", Times, serif;\r\n   \r\n    color: \t#00928a;\r\n \r\nfont-size: 35px;\r\ntext-shadow: rgb(41, 2, 2) 1px 1px 1px;\r\n}\r\n\r\n.wtf {\r\n  font-family:fantasy;\r\n  font-size: 14px;\r\n  color: \trgb(41, 2, 2);\r\n}", ""]);
 
 // exports
 
@@ -301,7 +301,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/auth/login/login-form/login-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"form-signin\" [formGroup]=\"loginForm\">\n  <span style=\"font-size: 30px;\">Scott Web </span><span>beta1.0</span>\n  <label for=\"inputEmail\" class=\"sr-only\">Email address</label>\n  <input type=\"email\" id=\"inputEmail\" class=\"form-control\" formControlName=\"userName\" placeholder=\"帳號\" required autofocus>\n  <label for=\"inputPassword\" class=\"sr-only\">Password</label>\n  <input type=\"password\" id=\"inputPassword\" class=\"form-control  \" formControlName=\"password\" placeholder=\"密碼\" required>\n  <div class=\"checkbox\" *ngIf=\"error\">\n    <span style=\"color: red\"> 帳號密碼錯誤，請重新輸入 </span>\n  </div>\n \n \n  <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" (click)=\"login.emit(loginForm.value)\">Sign in</button>\n</form>"
+module.exports = "<form class=\"form-signin\" [formGroup]=\"loginForm\">\n  <span class=\"logoStyle\">Scott Web </span><span class=\"wtf\">beta1.0</span>\n  <label for=\"inputEmail\" class=\"sr-only\">Email address</label>\n  <input type=\"email\" id=\"inputEmail\" class=\"form-control\" formControlName=\"userName\" placeholder=\"帳號\" required autofocus>\n  <label for=\"inputPassword\" class=\"sr-only\">Password</label>\n  <input type=\"password\" id=\"inputPassword\" class=\"form-control  \" formControlName=\"password\" placeholder=\"密碼\" required>\n  <div class=\"checkbox\" *ngIf=\"error\">\n    <span style=\"color: red\"> 帳號密碼錯誤，請重新輸入 </span>\n  </div>\n \n \n  <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" (click)=\"login.emit(loginForm.value)\">Sign in</button>\n</form>"
 
 /***/ }),
 
@@ -573,7 +573,7 @@ var AuthService = (function () {
     function AuthService(http, store) {
         this.http = http;
         this.store = store;
-        this.getPostsURI = 'http://35.194.161.219:3000/login';
+        this.getPostsURI = 'https://scottwww.nctu.me/login';
         this.user$ = store.select('auth').map(function (state) { return state.user; });
         this.type$ = store.select('auth').map(function (state) { return state.type; });
         this.isUserLoggedIn = false;
@@ -691,7 +691,7 @@ DashboardRoutingModule = __decorate([
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " \r\n\r\n  <body >\r\n  <nav class=\"navbar navbar-inverse navbar-static-top \">\r\n    <div class=\"container\">\r\n      <div class=\"navbar-header\">\r\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\"\r\n          aria-controls=\"navbar\">\r\n            <span class=\"sr-only\">Toggle navigation</span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n          </button>\r\n        <a class=\"navbar-brand\"  [routerLink]=\"['/dashboard', 'product']\">My Market</a>\r\n      </div>\r\n      <div id=\"navbar\" class=\"navbar-collapse collapse\">\r\n        <ul class=\"nav navbar-nav\">\r\n          <li class=\"active\"><a [routerLink]=\"['/dashboard', 'product']\">首頁</a></li>\r\n          <li><a [routerLink]=\"['/dashboard', 'enactment']\">Eenactment</a></li>\r\n          <li class=\"dropdown\">\r\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown <span class=\"caret\"></span></a>\r\n            <ul class=\"dropdown-menu\">\r\n              <li><a href=\"#\">Action</a></li>\r\n              <li><a href=\"#\">Another action</a></li>\r\n              <li><a href=\"#\">Something else here</a></li>\r\n              <li role=\"separator\" class=\"divider\"></li>\r\n              <li class=\"dropdown-header\">Nav header</li>\r\n              <li><a href=\"#\">Separated link</a></li>\r\n              <li><a href=\"#\">One more separated link</a></li>\r\n            </ul>\r\n          </li>\r\n        </ul>\r\n         <ul class=\"nav navbar-nav navbar-right\" *ngIf=\" userTest\">\r\n            <li> <a style=\"width:100%\"><img class=\"img\" src=\"http://t2.rbxcdn.com/adbd08763681b1795bf9a586563c714e\" >{{ userTest.nickName }}</a></li>\r\n  \r\n            <li><a style=\"  cursor:pointer;\" (click)=\" logout()\">登出</a></li>\r\n          </ul>\r\n      </div>\r\n      <!--/.nav-collapse -->\r\n    </div>\r\n  </nav>\r\n  \r\n  \r\n\r\n  <router-outlet></router-outlet>\r\n\r\n\r\n</body>"
+module.exports = " \r\n\r\n  <body >\r\n  <nav class=\"navbar navbar-inverse navbar-static-top \">\r\n    <div class=\"container\">\r\n      <div class=\"navbar-header\">\r\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\"\r\n          aria-controls=\"navbar\">\r\n            <span class=\"sr-only\">Toggle navigation</span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n          </button>\r\n        <a class=\"navbar-brand logoStyle\"  [routerLink]=\"['/dashboard', 'product']\">Scott Web</a>\r\n      </div>\r\n      <div id=\"navbar\" class=\"navbar-collapse collapse\">\r\n        <ul class=\"nav navbar-nav\">\r\n         <!--  <li><a [routerLink]=\"['/dashboard', 'product']\">首頁</a></li> -->\r\n         <!--  <li><a [routerLink]=\"['/dashboard', 'enactment']\">管理</a></li> -->\r\n          <!-- <li class=\"dropdown\">\r\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown <span class=\"caret\"></span></a>\r\n            <ul class=\"dropdown-menu\">\r\n              <li><a href=\"#\">Action</a></li>\r\n              <li><a href=\"#\">Another action</a></li>\r\n              <li><a href=\"#\">Something else here</a></li>\r\n              <li role=\"separator\" class=\"divider\"></li>\r\n              <li class=\"dropdown-header\">Nav header</li>\r\n              <li><a href=\"#\">Separated link</a></li>\r\n              <li><a href=\"#\">One more separated link</a></li>\r\n            </ul>\r\n          </li> -->\r\n        </ul>\r\n         <ul class=\"nav navbar-nav navbar-right\" *ngIf=\" userTest\">\r\n            <li> <a style=\"width:100%; color: white\">Hello~ {{ userTest.nickName }}</a></li>\r\n  \r\n            <li><a style=\"  cursor:pointer;\" (click)=\" logout()\">登出</a></li>\r\n          </ul>\r\n      </div>\r\n      <!--/.nav-collapse -->\r\n    </div>\r\n  </nav>\r\n  \r\n  \r\n\r\n  <router-outlet></router-outlet>\r\n\r\n\r\n</body>"
 
 /***/ }),
 
@@ -703,7 +703,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\n  min-height: 75rem; }\n\n.img {\n  border-radius: 50%;\n  overflow: hidden;\n  height: 20px;\n  width: 20px; }\n", ""]);
+exports.push([module.i, "body {\n  min-height: 75rem; }\n\n.img {\n  border-radius: 50%;\n  overflow: hidden;\n  height: 20px;\n  width: 20px; }\n\n.logoStyle {\n  font-family: \"Times New Roman\", Times, serif;\n  font-size: 21px;\n  color: #20B2AA; }\n", ""]);
 
 // exports
 
@@ -1001,7 +1001,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/enactment/enactment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  enactment works!\n</p>\n \n "
+module.exports = "<div class=\"container\" style=\"margin: 0 auto\">\n\n      <div class=\"starter-template\">\n        <h1>Bootstrap starter template</h1>\n        <p class=\"lead\">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>\n      </div>\n\n    </div>"
 
 /***/ }),
 
@@ -1113,7 +1113,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product/product-enactment/product-enactment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<form class=\"form-horizontal\"  [formGroup]=\"form\">\n  <div class=\"box-body\">\n    <div class=\"form-group\">\n      <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">每頁筆數</label>\n      <div class=\"col-sm-10\">\n        <select class=\"form-control\" id=\"region\" formControlName=\"item\" [value]=\"config.itemsPerPage\"  name=\"item\">\n            <option value=\"null\" disabled><span class=\"fontCss\">請選擇</span></option>\n            <option *ngFor=\"let O of data\" [value]=\"O\" ><span class=\"fontCss\">{{ O }}</span></option>\n         </select>\n      </div>\n    </div>\n   <!--  <div class=\"form-group\">\n      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">物品</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" id=\"inputPassword3\"  formControlName=\"name\"    name=\"name\">\n      </div>\n    </div> -->\n \n    <div class=\"form-group\">\n    <div class=\"col-sm-12\">\n          <button type=\"button\" class=\"btn  pull-right btn-default\" (click)=\"cancel.emit()\"><i class=\"fa fa-remove\"></i> 取消</button>\n          <button  class=\"btn btn-primary pull-right\"   (click)=\"save( )\"><i class=\"fa fa-check\"></i> 儲存</button>\n    </div>\n  </div> \n  </div>\n  <!-- /.box-body -->\n  <!-- /.box-footer -->\n</form>\n "
+module.exports = "<form class=\"form-horizontal\" [formGroup]=\"form\">\n  <div class=\"box-body\">\n    <div class=\"form-group\">\n      <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">每頁筆數</label>\n      <div class=\"col-sm-10\">\n        <select class=\"form-control\" id=\"region\" formControlName=\"item\" [value]=\"config.itemsPerPage\" name=\"item\">\n            <option value=\"null\" disabled><span class=\"fontCss\">請選擇</span></option>\n            <option *ngFor=\"let O of data\" [value]=\"O\" ><span class=\"fontCss\">{{ O }}</span></option>\n         </select>\n      </div>\n    </div>\n    <!--  <div class=\"form-group\">\n      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">物品</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" id=\"inputPassword3\"  formControlName=\"name\"    name=\"name\">\n      </div>\n    </div> -->\n\n    <div class=\"form-group\">\n      <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">總和表單</label>\n      <div class=\"col-sm-10\">\n        <label class=\"radio-inline\"  *ngFor=\"let O of rankType\"><input type=\"radio\" name=\"rank\" formControlName=\"rank\" [value]=\"O.type\"> {{ O.name }} </label>\n        </div>\n      </div>\n\n      <div class=\"form-group\">\n        <div class=\"col-sm-12\">\n          <button type=\"button\" class=\"btn  pull-right btn-default\" (click)=\"cancel.emit()\"><i class=\"fa fa-remove\"></i> 取消</button>\n          <button class=\"btn btn-primary pull-right\" (click)=\"save( )\"><i class=\"fa fa-check\"></i> 儲存</button>\n        </div>\n      </div>\n    </div>\n    <!-- /.box-body -->\n    <!-- /.box-footer -->\n</form>\n "
 
 /***/ }),
 
@@ -1141,15 +1141,18 @@ var ProductEnactmentComponent = (function () {
         this.itemsPerPage = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.cancel = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.data = [5, 10, 15, 20];
+        this.rankType = [{ type: true, name: "開啟" }, { type: false, name: "隱藏" }];
         this.form = this.formBuilder.group({
             item: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */](null, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required),
+            rank: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */](true, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required),
         });
     }
     ProductEnactmentComponent.prototype.ngOnInit = function () {
         this.form.controls['item'].setValue(this.config.itemsPerPage);
+        this.form.controls['rank'].setValue(this.config.rankType);
     };
     ProductEnactmentComponent.prototype.save = function () {
-        this.itemsPerPage.emit(this.form.value.item);
+        this.itemsPerPage.emit(this.form.value);
     };
     return ProductEnactmentComponent;
 }());
@@ -1200,7 +1203,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product/product-form/product-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<form class=\"form-horizontal\" *ngIf=\"dataList\" [formGroup]=\"form\">\n  <div class=\"box-body\">\n    <div class=\"form-group\">\n      <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">項目</label>\n      <div class=\"col-sm-10\">\n        <select class=\"form-control\" id=\"region\" formControlName=\"item\"  [value]=\"dataList.item\" name=\"item\">\n            <option value=\"null\" disabled><span class=\"fontCss\">請選擇</span></option>\n            <option *ngFor=\"let O of data\" [value]=\"O.item\" ><span class=\"fontCss\">{{ O.item }}</span></option>\n         </select>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">物品</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" id=\"inputPassword3\"  formControlName=\"name\"  [value]=\"dataList.name\" name=\"name\">\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">金額</label>\n      <div class=\"col-sm-10\">\n        <input type=\"number\" class=\"form-control\" id=\"inputPassword3\" formControlName=\"price\"  [value]=\"dataList.price\" name=\"price\">\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">說明</label>\n      <div class=\"col-sm-10\">\n        <textarea class=\"form-control\" rows=\"3\" formControlName=\"text\"  [value]=\"dataList.text\" name=\"text\"></textarea>\n      </div>\n    </div>\n    <div class=\"form-group\">\n    <div class=\"col-sm-12\">\n          <button type=\"button\" class=\"btn  pull-right btn-default\" (click)=\"cancel.emit()\"><i class=\"fa fa-remove\"></i> 取消</button>\n          <button *ngIf=\"!dataList._id\" type=\"submit\"  class=\"btn btn-primary pull-right\" [disabled]=\"!form.valid\" (click)=\"save(form.value)\"><i class=\"fa fa-check\"></i> 儲存</button>\n          <button *ngIf=\"dataList._id\" type=\"submit\"   class=\"btn btn-primary pull-right\" (click)=\"editAndSave()\"><i class=\"fa fa-check\"></i> 儲存</button>\n    </div>\n  </div> \n  </div>\n  <!-- /.box-body -->\n  <!-- /.box-footer -->\n</form>\n "
+module.exports = "\n\n<form class=\"form-horizontal\" *ngIf=\"dataList\" [formGroup]=\"form\">\n  <div class=\"box-body\">\n    <div class=\"form-group\">\n      <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">項目</label>\n      <div class=\"col-sm-10\">\n        <select class=\"form-control\" id=\"region\" formControlName=\"item\"  [value]=\"dataList.item\" name=\"item\">\n            <option value=\"null\" disabled><span class=\"fontCss\">請選擇</span></option>\n            <option *ngFor=\"let O of data\" [value]=\"O.item\" ><span class=\"fontCss\">{{ O.item }}</span></option>\n         </select>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">物品</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" id=\"inputPassword3\"  formControlName=\"name\"  [value]=\"dataList.name\" name=\"name\">\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">金額</label>\n      <div class=\"col-sm-10\">\n        <input type=\"number\" class=\"form-control\" id=\"inputPassword3\" formControlName=\"price\" [value]=\"dataList.price\"\n        pattern=\"([1-9]\\d*)\" title=\"請輸入整數\"\n        name=\"price\">\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">說明</label>\n      <div class=\"col-sm-10\">\n        <textarea class=\"form-control\" rows=\"3\" formControlName=\"text\"  [value]=\"dataList.text\" name=\"text\"></textarea>\n      </div>\n    </div>\n    <div class=\"form-group\">\n    <div class=\"col-sm-12\">\n          <button type=\"button\" class=\"btn  pull-right btn-default\" (click)=\"cancel.emit()\"><i class=\"fa fa-remove\"></i> 取消</button>\n          <button *ngIf=\"!dataList._id\" type=\"submit\"  class=\"btn btn-primary pull-right\" [disabled]=\"!form.valid\" (click)=\"save(form.value)\"><i class=\"fa fa-check\"></i> 儲存</button>\n          <button *ngIf=\"dataList._id\" type=\"submit\"   class=\"btn btn-primary pull-right\" (click)=\"editAndSave()\"><i class=\"fa fa-check\"></i> 儲存</button>\n    </div>\n  </div> \n  </div>\n  <!-- /.box-body -->\n  <!-- /.box-footer -->\n</form>\n "
 
 /***/ }),
 
@@ -1305,6 +1308,82 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/product/product-list-total/product-list-total.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".tdEnd {\r\n    background-color: #deeae9;\r\n    font-weight:bold;\r\n}\r\n\r\n.rankCss {\r\n      font-family: Arial, Helvetica, sans-serif;\r\n      font-weight:bold;\r\n      font-size: 15px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/product/product-list-total/product-list-total.component.html":
+/***/ (function(module, exports) {
+
+module.exports = " \n <table class=\"table   table-bordered   \"  >\n  <thead>\n    <tr class=\"tr-only-hide\">\n      <th>排行</th>\n      <th>種類</th>\n      <th>數量</th>\n      <th>百分比</th>\n      <th class=\"text-right\">金額</th>\n\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let O of dataLists  | filterTotal: filter | orderBy:'rank'\" >\n      <th data-th=\"#\" scope=\"row\" *ngIf=\"O.item != 'all'\" class=\"rankCss\"> No.{{ O.rank }} </th>\n      <td data-th=\"種類\" *ngIf=\"O.item != 'all'\">{{ O.item }}</td>\n      <td data-th=\"數量\" *ngIf=\"O.item != 'all'\">共 {{  O.count }} 筆 </td>\n      <td data-th=\"百分比\" style=\"width:45%\" *ngIf=\"O.item != 'all'\">\n        <div class=\"progress\" style=\"margin-bottom: 0px;\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\"  aria-valuemin=\"0\" aria-valuemax=\"100\" [ngStyle]=\"{ width: total(O.price,O.total)  | percent:'1.0-1'  }\">\n            {{  total(O.price,O.total)  | percent:'1.0-1' }}\n          </div>\n        </div>\n      </td>\n      <td data-th=\"金額\" class=\"text-right\" *ngIf=\"O.item != 'all'\"> $  {{   O.price | number:'1.0-1' }}</td>\n\n      <td data-th=\"種類\" *ngIf=\"O.item == 'all'\" class=\"tdEnd\" colspan=\"2\">全部總和</td>\n      <td data-th=\"數量\" *ngIf=\"O.item == 'all'\" class=\"tdEnd\">共 {{  O.count }} 筆 </td>\n      <td data-th=\"金額\" class=\"text-right tdEnd\" *ngIf=\"O.item == 'all'\"  colspan=\"2\">共 $  {{   O.price | number:'1.0-1' }}</td>\n     \n    </tr>\n  \n  </tbody>\n</table>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/product/product-list-total/product-list-total.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductListTotalComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProductListTotalComponent = (function () {
+    function ProductListTotalComponent() {
+    }
+    ProductListTotalComponent.prototype.ngOnInit = function () {
+    };
+    ProductListTotalComponent.prototype.total = function (one, total) {
+        return one / total;
+    };
+    return ProductListTotalComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], ProductListTotalComponent.prototype, "dataLists", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], ProductListTotalComponent.prototype, "config", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], ProductListTotalComponent.prototype, "filter", void 0);
+ProductListTotalComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-product-list-total',
+        template: __webpack_require__("../../../../../src/app/product/product-list-total/product-list-total.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/product/product-list-total/product-list-total.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProductListTotalComponent);
+
+//# sourceMappingURL=product-list-total.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/product/product-list/product-list.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1326,7 +1405,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product/product-list/product-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<table class=\"table table-striped table-bordered table-rwd table-fill\">\n  <thead>\n    <tr class=\"tr-only-hide\">\n      <th>#</th>\n      <th>物品</th>\n      <th>種類</th>\n      <th  class=\"text-right\">價錢</th>\n      <th>說明</th>\n      <th>功能</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let O of dataLists  | filterItem: filter  | paginate: config; let index = index\">\n      <th data-th=\"#\" scope=\"row\">No.{{ (config.itemsPerPage * (config.currentPage - 1)) + index + 1 }}</th>\n      <td data-th=\"物品\">{{ O.name }}</td>\n      <td data-th=\"種類\">{{ O.item }}</td>\n      <td data-th=\"價錢\" class=\"text-right\">$ {{ O.price  | number:'.0-2'}}</td>\n      <td data-th=\"說明\">{{ O.text }}</td>\n      <th data-th=\"功能\">\n         \n        <a class=\"edit\" (click)=\"getById.emit(O._id)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>編輯 </a>\n        <a class=\"del\" (click)=\"delete.emit(O._id)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i>刪除</a>\n      </th>\n    </tr>\n  </tbody>\n</table>\n <app-pagination class=\" pull-right\" [id]=\"config.id\" (pageChange)=\"config.currentPage = $event\" (itemsPerPageChange)=\"config.itemsPerPage = $event\"></app-pagination>\n "
+module.exports = " \n \n\n<table class=\"table table-striped table-bordered table-rwd table-fill\">\n  <thead>\n    <tr class=\"tr-only-hide\">\n      <th>#</th>\n      <th>物品</th>\n      <th>種類</th>\n      <th class=\"text-right\">價錢</th>\n      <th>說明</th>\n      <th>功能</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let O of dataLists  | filterItem: filter  | paginate: config; let index = index\">\n      <th data-th=\"#\" scope=\"row\">No.{{ (config.itemsPerPage * (config.currentPage - 1)) + index + 1 }}</th>\n      <td data-th=\"物品\">{{ O.name }}</td>\n      <td data-th=\"種類\">{{ O.item }}</td>\n      <td data-th=\"價錢\" class=\"text-right\">$ {{ O.price | number:'1.0-1'  }}</td>\n      <td data-th=\"說明\">{{ O.text }}</td>\n      <th data-th=\"功能\">\n\n        <a class=\"edit\" (click)=\"getById.emit(O._id)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>編輯 </a>\n        <a class=\"del\" (click)=\"delete.emit(O._id)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i>刪除</a>\n      </th>\n    </tr>\n  </tbody>\n</table>\n<app-pagination class=\" pull-right\" [id]=\"config.id\" (pageChange)=\"config.currentPage = $event\" (itemsPerPageChange)=\"config.itemsPerPage = $event\"></app-pagination>"
 
 /***/ }),
 
@@ -1454,7 +1533,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product/product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"tableCss\" *ngIf=\"dataLists$ | async\">\n    <!--  <input *ngIf=\"buttonType == 'list'\" class=\"btn btn-primary\" type=\"button\" value=\"新增用品\" style=\"margin-bottom: 5px\" (click)=\"buttonType = 'add';\">\n  <input *ngIf=\"buttonType != 'list'\" class=\"btn btn-primary\" type=\"button\" value=\"返回清單\" style=\"margin-bottom: 5px\" (click)=\"buttonType = 'list'\"> -->\n    <div class=\"buttonStyle\">\n      <input *ngIf=\"buttonType == 'list'\" type=\"button\" value=\"新增用品\" (click)=\"buttonType = 'add';\">\n      <input *ngIf=\"buttonType != 'list'\" type=\"button\" value=\"返回清單\" (click)=\"buttonType = 'list'\">\n      <input  type=\"button\" value=\"設定\" (click)=\"fn()\">\n      \n      <select *ngIf=\"buttonType == 'list'\" [(ngModel)]=\"filter\">\n            <option value=\"\"><span class=\"fontCss\">全部</span></option>\n            <option *ngFor=\"let O of data\" [value]=\"O.item\" ><span class=\"fontCss\">{{ O.item }}</span></option>\n         </select>\n    </div>\n    <!-- Example single danger button -->\n\n    <app-product-form  *ngIf=\"(buttonType == 'edit' || buttonType == 'add')\"\n      [dataLists]=\"dataLists$ | async\"  \n      [dataList]=\"dataList$ | async\"  \n      [buttonType]=\"buttonType\"\n      (create)=\"create($event)\"\n      (edit)=\"edit($event)\" \n      (cancel)=\"cancel($event)\"\n     ></app-product-form>\n    <app-product-list *ngIf=\"buttonType == 'list'\"\n      [dataLists]=\"dataLists$ | async\" \n      [config]=\"config\"\n      [filter]=\"filter\"\n      (getById)=\"getById($event)\"\n      (delete)=\"delete($event)\"\n    ></app-product-list>\n  </div>\n\n</div>\n \n\n\n<ng-template #templateRef let-dialogRef=\"dialogRef\" let-ctx=\"dialogRef.context\">\n  <div class=\"modal-content\">\n    <div class=\"modal-header\">\n      <h4 class=\"modal-title\">設定</h4>\n    </div>\n    <div class=\"modal-body\">\n      <app-product-enactment\n        [config]=\"config\"\n        (itemsPerPage)=\"itemsPerPage($event)\"\n         (cancel)=\"cancelModal($event)\"\n      ></app-product-enactment>\n    </div>\n  </div>\n  <!-- /.modal-content -->\n</ng-template>\n "
+module.exports = "<div class=\"container\">\n  <div class=\"tableCss\" *ngIf=\"dataLists$ | async\">\n    <!--  <input *ngIf=\"buttonType == 'list'\" class=\"btn btn-primary\" type=\"button\" value=\"新增用品\" style=\"margin-bottom: 5px\" (click)=\"buttonType = 'add';\">\n  <input *ngIf=\"buttonType != 'list'\" class=\"btn btn-primary\" type=\"button\" value=\"返回清單\" style=\"margin-bottom: 5px\" (click)=\"buttonType = 'list'\"> -->\n    <div class=\"buttonStyle\">\n      <input *ngIf=\"buttonType == 'list'\" type=\"button\" value=\"新增用品\" (click)=\"buttonType = 'add';\">\n      <input *ngIf=\"buttonType != 'list'\" type=\"button\" value=\"返回清單\" (click)=\"buttonType = 'list'\">\n      <input  type=\"button\" value=\"設定\" (click)=\"fn()\">\n      \n      <select *ngIf=\"buttonType == 'list'\" [(ngModel)]=\"filter\">\n            <option value=\"\"><span class=\"fontCss\">全部</span></option>\n            <option *ngFor=\"let O of data\" [value]=\"O.item\" ><span class=\"fontCss\">{{ O.item }}</span></option>\n         </select>\n    </div>\n    <!-- Example single danger button -->\n\n    <app-product-form  *ngIf=\"(buttonType == 'edit' || buttonType == 'add')\"\n      [dataLists]=\"dataLists$ | async\"  \n      [dataList]=\"dataList$ | async\"  \n      [buttonType]=\"buttonType\"\n      (create)=\"create($event)\"\n      (edit)=\"edit($event)\" \n      (cancel)=\"cancel($event)\"\n     ></app-product-form>\n     <app-product-list-total *ngIf=\"buttonType == 'list' && this.config.rankType\"\n      [dataLists]=\"dataLists$ | async\" \n      [config]=\"config\"\n      [filter]=\"filter\"\n     ></app-product-list-total>\n    <app-product-list *ngIf=\"buttonType == 'list'\"\n      [dataLists]=\"dataLists$ | async\" \n      [config]=\"config\"\n      [filter]=\"filter\"\n      (getById)=\"getById($event)\"\n      (delete)=\"delete($event)\"\n    ></app-product-list>\n  </div>\n\n</div>\n \n\n\n<ng-template #templateRef let-dialogRef=\"dialogRef\" let-ctx=\"dialogRef.context\">\n  <div class=\"modal-content\">\n    <div class=\"modal-header\">\n      <h4 class=\"modal-title\">設定</h4>\n    </div>\n    <div class=\"modal-body\">\n      <app-product-enactment\n        [config]=\"config\"\n        (itemsPerPage)=\"itemsPerPage($event)\"\n         (cancel)=\"cancelModal($event)\"\n      ></app-product-enactment>\n    </div>\n  </div>\n  <!-- /.modal-content -->\n</ng-template>\n "
 
 /***/ }),
 
@@ -1498,6 +1577,7 @@ var ProductComponent = (function () {
             id: 'account-book',
             itemsPerPage: 10,
             currentPage: 1,
+            rankType: true
         };
         this.toastr_original.setRootViewContainerRef(vRef);
         this.dataLists$ = this.productService.dataLists$;
@@ -1567,8 +1647,20 @@ var ProductComponent = (function () {
     ProductComponent.prototype.xxx = function () {
         this.config.itemsPerPage = 3;
     };
-    ProductComponent.prototype.itemsPerPage = function (itemsPerPage) {
-        this.config.itemsPerPage = itemsPerPage;
+    ProductComponent.prototype.itemsPerPage = function (config) {
+        if (this.config.itemsPerPage != config.item) {
+            this.config.itemsPerPage = config.item;
+            this.toastService.info("每頁設定為" + config.item + "筆顯示!", "系統更變");
+        }
+        if (this.config.rankType != config.rank) {
+            this.config.rankType = config.rank;
+            if (config.rank) {
+                this.toastService.info("總和表單設定為開啟!", "系統更變");
+            }
+            else {
+                this.toastService.info("總和表單設定為隱藏!", "系統更變");
+            }
+        }
         this.dialogRef.dismiss();
     };
     ProductComponent.prototype.cancelModal = function () {
@@ -1608,14 +1700,20 @@ var _a, _b, _c, _d, _e, _f;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__product_list_product_list_component__ = __webpack_require__("../../../../../src/app/product/product-list/product-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_product_service__ = __webpack_require__("../../../../../src/app/product/shared/product.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_filter_item_pipe__ = __webpack_require__("../../../../../src/app/product/shared/filter-item.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared___ = __webpack_require__("../../../../../src/app/shared/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__product_enactment_product_enactment_component__ = __webpack_require__("../../../../../src/app/product/product-enactment/product-enactment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_filter_total_pipe__ = __webpack_require__("../../../../../src/app/product/shared/filter-total.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_orderBy_pipe__ = __webpack_require__("../../../../../src/app/product/shared/orderBy.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__shared___ = __webpack_require__("../../../../../src/app/shared/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__product_enactment_product_enactment_component__ = __webpack_require__("../../../../../src/app/product/product-enactment/product-enactment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__product_list_total_product_list_total_component__ = __webpack_require__("../../../../../src/app/product/product-list-total/product-list-total.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -1638,9 +1736,9 @@ ProductModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_3__product_routing_module__["a" /* ProductRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_9__shared___["b" /* SharedModule */]
+            __WEBPACK_IMPORTED_MODULE_11__shared___["b" /* SharedModule */]
         ],
-        declarations: [__WEBPACK_IMPORTED_MODULE_4__product_component__["a" /* ProductComponent */], __WEBPACK_IMPORTED_MODULE_5__product_form_product_form_component__["a" /* ProductFormComponent */], __WEBPACK_IMPORTED_MODULE_6__product_list_product_list_component__["a" /* ProductListComponent */], __WEBPACK_IMPORTED_MODULE_8__shared_filter_item_pipe__["a" /* FilterItemPipe */], __WEBPACK_IMPORTED_MODULE_10__product_enactment_product_enactment_component__["a" /* ProductEnactmentComponent */],],
+        declarations: [__WEBPACK_IMPORTED_MODULE_4__product_component__["a" /* ProductComponent */], __WEBPACK_IMPORTED_MODULE_5__product_form_product_form_component__["a" /* ProductFormComponent */], __WEBPACK_IMPORTED_MODULE_6__product_list_product_list_component__["a" /* ProductListComponent */], __WEBPACK_IMPORTED_MODULE_8__shared_filter_item_pipe__["a" /* FilterItemPipe */], __WEBPACK_IMPORTED_MODULE_9__shared_filter_total_pipe__["a" /* FilterTotalPipe */], __WEBPACK_IMPORTED_MODULE_10__shared_orderBy_pipe__["a" /* OrderByPipe */], __WEBPACK_IMPORTED_MODULE_12__product_enactment_product_enactment_component__["a" /* ProductEnactmentComponent */], __WEBPACK_IMPORTED_MODULE_13__product_list_total_product_list_total_component__["a" /* ProductListTotalComponent */],],
         providers: [__WEBPACK_IMPORTED_MODULE_7__shared_product_service__["a" /* ProductService */]]
     })
 ], ProductModule);
@@ -1692,6 +1790,123 @@ FilterItemPipe = __decorate([
 ], FilterItemPipe);
 
 //# sourceMappingURL=filter-item.pipe.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/product/shared/filter-total.pipe.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterTotalPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FilterTotalPipe = (function () {
+    function FilterTotalPipe() {
+    }
+    FilterTotalPipe.prototype.transform = function (dataLists, item) {
+        var data = [];
+        __WEBPACK_IMPORTED_MODULE_1_lodash__["last"](__WEBPACK_IMPORTED_MODULE_1_lodash__["map"](dataLists, function (dataList) {
+            if (__WEBPACK_IMPORTED_MODULE_1_lodash__["findIndex"](data, function (O) { return O.item == dataList.item; }) < 0) {
+                data.push({
+                    'item': dataList.item,
+                    'price': dataList.price,
+                    'count': 1
+                });
+            }
+            else {
+                var a = __WEBPACK_IMPORTED_MODULE_1_lodash__["findIndex"](data, { 'item': dataList.item });
+                __WEBPACK_IMPORTED_MODULE_1_lodash__["assign"](data[a], {
+                    price: __WEBPACK_IMPORTED_MODULE_1_lodash__["add"](data[a].price, dataList.price),
+                    count: __WEBPACK_IMPORTED_MODULE_1_lodash__["add"](data[a].count, 1)
+                });
+            }
+        }));
+        var priceTotal = __WEBPACK_IMPORTED_MODULE_1_lodash__["sumBy"](data, function (o) { return o.price; });
+        var countTotal = __WEBPACK_IMPORTED_MODULE_1_lodash__["sumBy"](data, function (o) { return o.count; });
+        __WEBPACK_IMPORTED_MODULE_1_lodash__["last"](__WEBPACK_IMPORTED_MODULE_1_lodash__["map"](data, function (O) {
+            var a = __WEBPACK_IMPORTED_MODULE_1_lodash__["findIndex"](data, { 'item': O.item });
+            __WEBPACK_IMPORTED_MODULE_1_lodash__["assign"](data[a], {
+                total: priceTotal
+            });
+        }));
+        //rank
+        __WEBPACK_IMPORTED_MODULE_1_lodash__["sortBy"](data, [function (o) { return o.price; }]);
+        __WEBPACK_IMPORTED_MODULE_1_lodash__["map"](__WEBPACK_IMPORTED_MODULE_1_lodash__["orderBy"](data, 'price'), function (O) {
+            var arraylength = __WEBPACK_IMPORTED_MODULE_1_lodash__["orderBy"](data, 'price').length;
+            var rank = arraylength - (__WEBPACK_IMPORTED_MODULE_1_lodash__["findIndex"](__WEBPACK_IMPORTED_MODULE_1_lodash__["orderBy"](data, 'price'), { 'item': O.item }));
+            var a = __WEBPACK_IMPORTED_MODULE_1_lodash__["findIndex"](data, { 'item': O.item });
+            __WEBPACK_IMPORTED_MODULE_1_lodash__["assign"](data[a], {
+                rank: rank
+            });
+        });
+        if (!item) {
+            data.push({
+                item: "all",
+                price: priceTotal,
+                count: countTotal
+            });
+            return data;
+        }
+        else {
+            return __WEBPACK_IMPORTED_MODULE_1_lodash__["filter"](data, { item: item });
+        }
+    };
+    return FilterTotalPipe;
+}());
+FilterTotalPipe = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
+        name: 'filterTotal'
+    }),
+    __metadata("design:paramtypes", [])
+], FilterTotalPipe);
+
+//# sourceMappingURL=filter-total.pipe.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/product/shared/orderBy.pipe.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderByPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var OrderByPipe = (function () {
+    function OrderByPipe() {
+    }
+    OrderByPipe.prototype.transform = function (collection, iteratees, orders) {
+        return __WEBPACK_IMPORTED_MODULE_1_lodash__["orderBy"](collection, iteratees, orders);
+    };
+    return OrderByPipe;
+}());
+OrderByPipe = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
+        name: 'orderBy'
+    })
+], OrderByPipe);
+
+//# sourceMappingURL=orderBy.pipe.js.map
 
 /***/ }),
 
@@ -1785,7 +2000,7 @@ var ProductService = (function () {
     function ProductService(store, http) {
         this.store = store;
         this.http = http;
-        this.getPostsURI = 'http://35.194.161.219:3000/datas';
+        this.getPostsURI = 'https://scottwww.nctu.me/datas';
         this.dataLists$ = store.select('product').map(function (state) { return state.dataLists; });
         this.dataList$ = store.select('product').map(function (state) { return state.dataList; });
     }
